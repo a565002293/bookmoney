@@ -9591,6 +9591,11 @@ svg-baker@^1.4.0, svg-baker@^1.4.1, svg-baker@^1.5.0:
     query-string "^4.3.2"
     traverse "^0.6.6"
 
+svg-loader@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/svg-loader/download/svg-loader-0.0.2.tgz#601ab2fdaa1dadae3ca9975b550de92a07e1d92b"
+  integrity sha1-YBqy/aodra48qZdbVQ3pKgfh2Ss=
+
 svg-sprite-loader-mod@^4.1.6-mod1:
   version "4.1.6-mod1"
   resolved "https://registry.npm.taobao.org/svg-sprite-loader-mod/download/svg-sprite-loader-mod-4.1.6-mod1.tgz#08ecb328c9dd20472b596cd49fba85e0af99f0e9"
