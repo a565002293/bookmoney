@@ -26,37 +26,46 @@
     import { Component } from "vue-property-decorator";
     @Component
     export default class NumberPad extends Vue {
-        output ='0';
-        inputContent(event: MouseEvent){
+        output = '0';
+
+        inputContent(event: MouseEvent) {
             const button = (event.target as HTMLButtonElement);
             const input = button.textContent!;
-            if(this.output.length===16){return}
-            if (this.output==='0'){
-                if('0123456789'.indexOf(input)>=0){
-                    this.output=input;
-                }else {
-                    this.output+=input
+            if (this.output.length === 16) {
+                return
+            }
+            if (this.output === '0') {
+                if ('0123456789'.indexOf(input) >= 0) {
+                    this.output = input;
+                } else {
+                    this.output += input
                 }
                 return;
             }
-            if (this.output.indexOf('.')>=0 && input ==='.'){return;}
-            this.output+=input
+            if (this.output.indexOf('.') >= 0 && input === '.') {
+                return;
+            }
+            this.output += input
         }
-        remove(){
-            if(this.output.length ===1) {
+
+        remove() {
+            if (this.output.length === 1) {
                 this.output = '0'
-            }else {
-                this.output = this.output.slice(0,-1);
+            } else {
+                this.output = this.output.slice(0, -1);
             }
         }
-        clear(){
+
+        clear() {
             this.output = '0'
         }
+
         ok() {
-            console.log(this.output);}
+            this.output = '0'
+            this.$emit('update:value', this.output);
+            this.$emit('submit',this.output);
+        }
     }
-
-
 </script>
 
 <style lang="scss" scoped>
