@@ -16,7 +16,7 @@
   import Tags from '@/components/Money/Tags.vue';
   import {Component, Watch} from 'vue-property-decorator';
   import {recordListModel} from "@/model/recordListModel";
-  import {tagListModel} from "@/model/tagListModel";
+  import tagListModel from "@/model/tagListModel";
 
     window.localStorage.setItem('version','0.0.1');
   const recordList = recordListModel.fetch();
