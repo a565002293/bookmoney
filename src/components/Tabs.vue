@@ -1,6 +1,6 @@
 <template>
-    <ul class="tabs">
-        <li v-for="item in dataSource" :key="item.value"
+    <ul class="tabs" :class="{[classPrefix+'-tabs']: classPrefix}">
+        <li v-for="item in dataSource" :key="item.value" class="tabs-item"
             :class="liClass(item)" @click="select(item)">{{item.text}}
         </li>
     </ul>
@@ -35,7 +35,7 @@
         display: flex;
         text-align: center;
         font-size: 24px;
-        > li {
+        &-item {
             width: 50%;
             height: 64px;
             display: flex;
@@ -51,6 +51,9 @@
                 height: 4px;
                 background: #333;
             }
+        }
+        ::v-deep .interval-tabs-item {
+            height: 48px;
         }
     }
 </style>
