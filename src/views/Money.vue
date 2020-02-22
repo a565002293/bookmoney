@@ -10,6 +10,7 @@
       />
     </div>
     <Tags @update:value="record.tags= $event"/>
+    <img src="../assets/qrcode.png" alt="" v-if="document.documentElement.clientWidth > 500">
   </Layout>
 </template>
 
@@ -25,6 +26,7 @@
   @Component({
     components: {Tabs, Tags, FormItem, NumberPad},
   })
+
   export default class Money extends Vue {
     get recordList() {
       return this.$store.state.recordList;
