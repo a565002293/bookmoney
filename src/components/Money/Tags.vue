@@ -17,17 +17,22 @@
   import {Component} from 'vue-property-decorator';
   import {mixins} from 'vue-class-component';
   import TagHelper from '@/mixins/TagHelper';
+
   @Component
   export default class Tags extends mixins(TagHelper) {
     selectedTags: string[] = [];
+
     get tagList() {
       return this.$store.state.tagList;
     }
+
     created() {
       this.$store.commit('fetchTags');
     }
+
     toggle(tag: string) {
       const index = this.selectedTags.indexOf(tag);
+
       if (index >= 0) {
         this.selectedTags.splice(index, 1);
       } else {
@@ -76,4 +81,5 @@
       }
     }
   }
+
 </style>

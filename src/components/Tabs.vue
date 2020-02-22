@@ -9,7 +9,9 @@
 <script lang="ts">
     import Vue from 'vue';
     import {Component, Prop} from 'vue-property-decorator';
+
     type DataSourceItem = { text: string; value: string }
+
     @Component
     export default class Tabs extends Vue {
         @Prop({required: true, type: Array})
@@ -20,12 +22,14 @@
         classPrefix?: string;
         @Prop({type: String, default: '64px'})
         height!: string;
+
         liClass(item: DataSourceItem) {
             return {
                 [this.classPrefix + '-tabs-item']: this.classPrefix,
                 selected: item.value === this.value
             };
         }
+
         select(item: DataSourceItem) {
             this.$emit('update:value', item.value);
         }

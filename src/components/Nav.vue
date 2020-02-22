@@ -13,22 +13,19 @@
       统计
     </router-link>
   </nav>
-
 </template>
 
 <script lang="ts">
-  import Icon from "@/components/Icon.vue";
-  export default {
-    name: 'Nav',
-    components: {Icon}
-  };
 
+  export default {
+    name: 'Nav'
+  };
 </script>
 
 <style lang="scss" scoped>
   @import "~@/assets/style/helper.scss";
   nav {
-    box-shadow: 0 0 3px $color-shadow;
+    @extend %outerShadow;
     display: flex;
     flex-direction: row;
     font-size: 12px;
