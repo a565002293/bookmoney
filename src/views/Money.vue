@@ -10,7 +10,6 @@
       />
     </div>
     <Tags @update:value="record.tags= $event"/>
-    <img src="../assets/qrcode.png" alt="" v-if="document.documentElement.clientWidth > 500">
   </Layout>
 </template>
 
